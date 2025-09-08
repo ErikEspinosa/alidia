@@ -1,0 +1,382 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap')
+
+// Mixins
+@mixin tablet
+    @media screen and (min-width: 481px) and (max-width: 820px)
+        @content
+@mixin mobile
+    @media screen and (min-width: 320px) and (max-width: 480px)
+        @content
+
+@mixin font-serif()
+    font-family: "Libre Baskerville", serif
+@mixin backgroundCover()
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+html
+    scroll-behavior: smooth
+
+body
+    font-family: "Figtree", sans-serif
+
+h1, h2, h3, h4, h5, h6, p
+    line-height: normal
+    margin: 0
+
+a
+    text-decoration: none
+
+// Utils
+.container
+    width: 100%
+    max-width: 1132px
+    margin: 0 auto
+    box-sizing: border-box  
+
+// Sections  
+.navbar-main
+    display: flex
+    align-items: center
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 60px
+    background: rgba(0, 0, 0, 0.25)
+    @include mobile
+        background-color: #333F50
+    .container
+        display: flex
+        justify-content: right
+        @include mobile
+            padding: 0 20px
+        .navbar-main-mobile-grid
+            display: none
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            @include mobile
+                display: flex
+            .navbar-main-mobile-logo
+                width: auto
+                height: 26px
+            .navbar-main-mobile-burger
+                width: 30px
+                cursor: pointer
+                .navbar-main-mobile-burger-line
+                    width: 100%
+                    height: 2px
+                    background-color: #fff
+                    margin-bottom: 5px
+        .navbar-main-menu
+            list-style: none
+            padding: 0
+            margin: 0
+            @include mobile
+                display: none
+            .navbar-main-menu-item
+                display: inline-block
+                margin-right: 60px
+                &:hover 
+                    .navbar-main-submenu
+                        opacity: 1
+                        visibility: visible
+                @include mobile
+                    margin-right: 20px
+                a
+                    font-size: 20px
+                    font-weight: 500
+                    color: #fff
+                    @include mobile
+                        font-size: 16px
+                .navbar-main-submenu
+                    opacity: 0
+                    visibility: hidden
+                    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out
+                    position: absolute
+                    background-color: #772439
+                    list-style: none
+                    padding: 10px 20px
+                    margin: 0
+                    .navbar-main-submenu-item
+                        margin-bottom: 12px
+                        a
+                            font-size: 18px
+                            font-weight: 500
+
+.hero-main
+    background: linear-gradient(to right, rgba(51, 63, 80, 1), rgba(255, 255, 255, 0)), url('../assets/hero-main-bg.jpg')
+    background-position: top center
+    background-repeat: no-repeat
+    background-size: cover
+    min-height: 810px
+    @include mobile
+        background-position: center
+        background-size: cover
+        min-height: 350px
+    .container
+        @include mobile
+            padding: 0 20px
+    .hero-main-grid
+        display: grid
+        grid-template-columns: 40% 60%
+        padding-top: 150px
+        box-sizing: border-box
+        @include mobile
+            grid-template-columns: 1fr 1fr
+            padding-top: 130px
+        .hero-main-logo
+            @include mobile
+                img
+                    width: 120px
+                    height: auto
+
+.features
+    display: flex
+    align-items: center
+    background-color: #333F50
+    min-height: 110px
+    color: #FFFFFF
+    text-align: center
+    font-size: 24px
+    @include mobile
+        font-size: 14px
+
+.about
+    background-color: #D9D9D9
+    .about-grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        @include mobile
+            grid-template-columns: 1fr
+        .about-image
+            position: relative
+            background: url('../assets/about-image.jpg')
+            background-position: left center
+            background-repeat: no-repeat
+            background-size: auto 100%
+            @include mobile
+                height: 250px
+                background-position: center
+                background-size: cover
+            .about-triangle
+                position: absolute
+                top: 0
+                left: 333px
+                width: 0px
+                height: 0px
+                border-style: solid
+                border-width: 0 0 409px 200px
+                border-color: transparent transparent #D9D9D9 transparent
+                transform: rotate(0deg)
+                @include mobile
+                    top: 0
+                    left: auto
+                    right: 0
+                    border-width: 0 0 250px 150px
+        .about-content
+            padding: 100px 0
+            @include mobile
+                padding: 50px 20px
+            p
+                font-size: 18px
+                color: #333F50
+                max-width: 510px
+                margin-bottom: 20px
+                line-height: 1.5
+                @include mobile
+                    font-size: 14px
+                &:last-of-type
+                    margin-bottom: 0
+
+.details
+    .details-grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        @include mobile
+            grid-template-columns: 1fr
+        .details-left
+            display: flex
+            justify-content: right
+            align-items: center
+            min-height: 300px
+            background-color: #333F50
+            color: #FFFFFF
+            @include mobile
+                flex-direction: column
+                justify-content: center
+                align-items: flex-start
+                min-height: 250px
+                padding: 0 60px
+            h2
+                @include font-serif()
+                font-size: 36px
+                font-weight: 400
+                margin-right: 80px
+                color: #BF9000
+                margin-bottom: 10px
+                @include mobile
+                    font-size: 26px
+                    margin-right: 0
+            p
+                font-size: 18px
+                max-width: 330px
+                margin-right: 80px
+                line-height: 1.4
+                @include mobile
+                    font-size: 12px
+                    margin-right: 0
+        .details-right
+            display: flex
+            justify-content: left
+            align-items: center
+            min-height: 300px
+            background-color: #212D3E
+            color: #FFFFFF
+            @include mobile
+                flex-direction: column
+                justify-content: center
+                align-items: flex-start
+                min-height: 250px
+                padding: 0 60px
+            h2
+                @include font-serif()
+                font-size: 36px
+                font-weight: 400
+                margin-left: 80px
+                color: #9DC3E6
+                margin-bottom: 10px
+                @include mobile
+                    font-size: 26px
+                    margin-left: 0
+            p
+                font-size: 18px
+                max-width: 330px
+                margin-left: 80px
+                line-height: 1.4
+                @include mobile
+                    font-size: 12px
+                    margin-left: 0
+
+.quote
+    display: flex
+    align-items: center
+    background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url('../assets/quote-bg.jpg')
+    background-position: top center
+    background-repeat: no-repeat
+    background-size: cover
+    min-height: 450px
+    @include mobile
+        min-height: 350px
+        padding: 0 20px
+    .container
+        display: flex
+        justify-content: center
+    p
+        @include font-serif()
+        font-size: 48px
+        line-height: 1.5
+        max-width: 545px
+        color: #FFFFFF
+        text-align: center
+        @include mobile
+            font-size: 24px
+        .quote-highlight
+            color: #9DC3E6
+
+.services
+    background-color: #EBEBEB
+    padding: 70px 0
+    @include mobile
+        padding: 50px 0
+    .container
+        @include mobile
+            padding: 0 20px
+    .services-title
+        @include font-serif()
+        font-size: 36px
+        font-weight: 400
+        color: #333F50
+        text-align: center
+        margin-bottom: 40px
+        @include mobile
+            font-size: 26px
+    .services-title-highlight
+        color: #9DC3E6
+    .services-grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 20px
+        @include mobile
+            grid-template-columns: 1fr
+        .services-item
+            .services-subtitle
+                @include font-serif()
+                font-size: 24px
+                font-weight: 400
+                color: #333F50
+                margin-bottom: 20px
+                @include mobile
+                    font-size: 18px
+            .services-list
+                li
+                    font-size: 18px
+                    color: #333F50
+                    margin-bottom: 10px
+                    @include mobile
+                        font-size: 14px
+
+.why-choose
+    padding: 70px 0
+    @include mobile
+        padding: 50px 0
+    .container
+        @include mobile
+            padding: 0 20px
+    .why-choose-grid
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 20px
+        @include mobile
+            grid-template-columns: 1fr
+        .why-choose-item
+            max-width: 325px
+            @include mobile
+                max-width: 100%
+            .why-choose-image
+                margin-bottom: 20px
+            .why-choose-title
+                @include font-serif()
+                font-size: 28px
+                font-weight: 400
+                color: #333F50
+                margin-bottom: 20px
+                @include mobile
+                    font-size: 26px
+            .why-choose-title-orange
+                color: #BF9000
+            .why-choose-title-blue
+                color: #9DC3E6
+            .why-choose-subtitle
+                font-size: 16px
+                font-weight: 600
+                color: #9DC3E6
+                margin-bottom: 1px
+                @include mobile
+                    font-size: 14px
+            p
+                font-size: 18px
+                color: #333F50
+                margin-bottom: 25px
+                @include mobile
+                    font-size: 14px
+
+
+                
+
+
+        
