@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@font-face {
+  font-family: "Perpetua";
+  src: url("../assets/fonts/perpetua.woff") format("woff"), url("../assets/fonts/perpetua.ttf") format("truetype");
+}
 html {
   scroll-behavior: smooth;
 }
@@ -62,6 +66,13 @@ a {
 .navbar-main .container .navbar-main-mobile-grid .navbar-main-mobile-logo {
   width: auto;
   height: 26px;
+}
+.navbar-main .container .navbar-main-mobile-grid .navbar-main-mobile-link {
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-radius: 30px;
+  padding: 5px 10px;
 }
 .navbar-main .container .navbar-main-mobile-grid .navbar-main-mobile-burger {
   width: 30px;
@@ -273,7 +284,7 @@ a {
   }
 }
 .details .details-grid .details-left h2 {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Perpetua", serif;
   font-size: 36px;
   font-weight: 400;
   margin-right: 80px;
@@ -316,7 +327,7 @@ a {
   }
 }
 .details .details-grid .details-right h2 {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Perpetua", serif;
   font-size: 36px;
   font-weight: 400;
   margin-left: 80px;
@@ -362,12 +373,13 @@ a {
   justify-content: center;
 }
 .quote p {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Perpetua", serif;
   font-size: 48px;
-  line-height: 1.5;
+  line-height: normal;
   max-width: 545px;
   color: #FFFFFF;
   text-align: center;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .quote p {
@@ -393,7 +405,7 @@ a {
   }
 }
 .services .services-title {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Perpetua", serif;
   font-size: 36px;
   font-weight: 400;
   color: #333F50;
@@ -419,8 +431,8 @@ a {
   }
 }
 .services .services-grid .services-item .services-subtitle {
-  font-family: "Libre Baskerville", serif;
-  font-size: 24px;
+  font-family: "Perpetua", serif;
+  font-size: 28px;
   font-weight: 400;
   color: #333F50;
   margin-bottom: 20px;
@@ -476,8 +488,8 @@ a {
   margin-bottom: 20px;
 }
 .why-choose .why-choose-grid .why-choose-item .why-choose-title {
-  font-family: "Libre Baskerville", serif;
-  font-size: 28px;
+  font-family: "Perpetua", serif;
+  font-size: 36px;
   font-weight: 400;
   color: #333F50;
   margin-bottom: 20px;
@@ -513,4 +525,277 @@ a {
   .why-choose .why-choose-grid .why-choose-item p {
     font-size: 14px;
   }
+}
+
+.footer-main .footer-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-main .footer-main-grid .footer-main-quote {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 400px;
+  background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url("../assets/footer-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-quote {
+    justify-content: center;
+    min-height: 300px;
+    padding: 0 20px;
+  }
+}
+.footer-main .footer-main-grid .footer-main-quote p {
+  font-family: "Perpetua", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 500px;
+  margin-right: 100px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-quote p {
+    font-size: 24px;
+    margin-right: 0;
+  }
+}
+.footer-main .footer-main-grid .footer-main-quote .footer-main-quote-highlight {
+  color: #9DC3E6;
+}
+.footer-main .footer-main-grid .footer-main-contact {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #212D3E;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-contact {
+    padding: 50px 20px;
+  }
+}
+.footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-title {
+  font-family: "Perpetua", serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #9DC3E6;
+  margin-bottom: 30px;
+  margin-left: 100px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-title {
+    font-size: 24px;
+    margin-left: 0;
+  }
+}
+.footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items {
+  margin-left: 100px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items {
+    margin-left: 0;
+  }
+}
+.footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items .footer-main-contact-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+.footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items .footer-main-contact-item .footer-main-contact-icon {
+  margin-right: 20px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items .footer-main-contact-item .footer-main-contact-icon img {
+    height: 20px;
+    width: auto;
+  }
+}
+.footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items .footer-main-contact-item .footer-main-contact-content {
+  font-size: 18px;
+  color: #FFFFFF;
+  max-width: 330px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-main .footer-main-grid .footer-main-contact .footer-main-contact-wrapper .footer-main-contact-items .footer-main-contact-item .footer-main-contact-content {
+    font-size: 14px;
+  }
+}
+
+.lawyer-left .container {
+  padding: 0 20px;
+}
+.lawyer-left .lawyer-left-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-left .lawyer-left-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.lawyer-left .lawyer-left-grid .lawyer-left-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  order: 1;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-left .lawyer-left-grid .lawyer-left-image {
+    order: 2;
+  }
+  .lawyer-left .lawyer-left-grid .lawyer-left-image img {
+    max-width: 300px;
+    height: auto;
+  }
+}
+.lawyer-left .lawyer-left-grid .lawyer-left-content {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  order: 2;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-left .lawyer-left-grid .lawyer-left-content {
+    padding: 40px 0;
+    order: 1;
+  }
+}
+.lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper {
+  max-width: 508px;
+}
+.lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper .lawyer-left-name {
+  font-family: "Perpetua", serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #9DC3E6;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper .lawyer-left-name {
+    font-size: 24px;
+  }
+}
+.lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper .lawyer-left-carreer {
+  font-size: 20px;
+  color: #333F50;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper .lawyer-left-carreer {
+    font-size: 16px;
+  }
+}
+.lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper .lawyer-left-about {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333F50;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-left .lawyer-left-grid .lawyer-left-content .lawyer-left-content-wrapper .lawyer-left-about {
+    font-size: 14px;
+  }
+}
+.lawyer-left .lawyer-left-footer {
+  background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url("../assets/lawyer-footer-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50px;
+}
+
+.lawyer-right .container {
+  padding: 0 20px;
+}
+.lawyer-right .lawyer-right-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-right .lawyer-right-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.lawyer-right .lawyer-right-grid .lawyer-right-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-right .lawyer-right-grid .lawyer-right-image img {
+    max-width: 300px;
+    height: auto;
+  }
+}
+.lawyer-right .lawyer-right-grid .lawyer-right-content {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-right .lawyer-right-grid .lawyer-right-content {
+    padding: 40px 0;
+  }
+}
+.lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper {
+  max-width: 508px;
+}
+.lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper .lawyer-right-name {
+  font-family: "Perpetua", serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #9DC3E6;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper .lawyer-right-name {
+    font-size: 24px;
+  }
+}
+.lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper .lawyer-right-carreer {
+  font-size: 20px;
+  color: #333F50;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper .lawyer-right-carreer {
+    font-size: 16px;
+  }
+}
+.lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper .lawyer-right-about {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333F50;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .lawyer-right .lawyer-right-grid .lawyer-right-content .lawyer-right-content-wrapper .lawyer-right-about {
+    font-size: 14px;
+  }
+}
+.lawyer-right .lawyer-right-footer {
+  background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url("../assets/lawyer-footer-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50px;
+}
+
+.lawyer-title-highlight {
+  color: #333F50;
+}
+
+.lawyers-divider {
+  height: 60px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,9 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap')
+@font-face
+    font-family: 'Perpetua';
+    src: url('../assets/fonts/perpetua.woff') format('woff'), url('../assets/fonts/perpetua.ttf') format('truetype'); 
 
 // Mixins
 @mixin tablet
@@ -11,7 +14,7 @@
         @content
 
 @mixin font-serif()
-    font-family: "Libre Baskerville", serif
+    font-family: "Perpetua", serif
 @mixin backgroundCover()
     background-position: center
     background-repeat: no-repeat
@@ -64,6 +67,12 @@ a
             .navbar-main-mobile-logo
                 width: auto
                 height: 26px
+            .navbar-main-mobile-link
+                font-size: 12px
+                background-color: rgba(255, 255, 255, 0.1)
+                color: #FFFFFF
+                border-radius: 30px
+                padding: 5px 10px
             .navbar-main-mobile-burger
                 width: 30px
                 cursor: pointer
@@ -279,10 +288,11 @@ a
     p
         @include font-serif()
         font-size: 48px
-        line-height: 1.5
+        line-height: normal
         max-width: 545px
         color: #FFFFFF
         text-align: center
+        text-transform: uppercase
         @include mobile
             font-size: 24px
         .quote-highlight
@@ -316,7 +326,7 @@ a
         .services-item
             .services-subtitle
                 @include font-serif()
-                font-size: 24px
+                font-size: 28px
                 font-weight: 400
                 color: #333F50
                 margin-bottom: 20px
@@ -351,7 +361,7 @@ a
                 margin-bottom: 20px
             .why-choose-title
                 @include font-serif()
-                font-size: 28px
+                font-size: 36px
                 font-weight: 400
                 color: #333F50
                 margin-bottom: 20px
@@ -374,6 +384,197 @@ a
                 margin-bottom: 25px
                 @include mobile
                     font-size: 14px
+
+.footer-main
+    .footer-main-grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        @include mobile
+            grid-template-columns: 1fr
+        .footer-main-quote
+            display: flex
+            justify-content: flex-end
+            align-items: center
+            min-height: 400px
+            background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url('../assets/footer-bg.jpg')
+            background-position: top center
+            background-repeat: no-repeat
+            background-size: cover
+            @include mobile
+                justify-content: center
+                min-height: 300px
+                padding: 0 20px
+            p
+                @include font-serif()
+                font-size: 48px
+                font-weight: 400
+                line-height: normal
+                text-transform: uppercase
+                text-align: center
+                color: #FFFFFF
+                max-width: 500px
+                margin-right: 100px
+                @include mobile
+                    font-size: 24px
+                    margin-right: 0
+            .footer-main-quote-highlight
+                color: #9DC3E6
+        .footer-main-contact
+            display: flex
+            justify-content: left
+            align-items: center
+            background-color: #212D3E
+            @include mobile
+                padding: 50px 20px
+            .footer-main-contact-wrapper
+                .footer-main-contact-title
+                    @include font-serif()
+                    font-size: 36px
+                    font-weight: 400
+                    color: #9DC3E6
+                    margin-bottom: 30px
+                    margin-left: 100px
+                    @include mobile
+                        font-size: 24px
+                        margin-left: 0
+                .footer-main-contact-items
+                    margin-left: 100px
+                    @include mobile
+                        margin-left: 0
+                    .footer-main-contact-item
+                        display: flex
+                        margin-bottom: 30px
+                        .footer-main-contact-icon
+                            margin-right: 20px
+                            img
+                                @include mobile
+                                    height: 20px
+                                    width: auto
+                        .footer-main-contact-content
+                            font-size: 18px
+                            color: #FFFFFF
+                            max-width: 330px
+                            @include mobile
+                                font-size: 14px
+
+.lawyer-left
+    .container
+        padding: 0 20px
+    .lawyer-left-grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        min-height: 450px
+        @include mobile
+            grid-template-columns: 1fr
+        .lawyer-left-image
+            display: flex
+            justify-content: center
+            align-items: flex-end
+            order: 1
+            @include mobile
+                order: 2
+                img
+                    max-width: 300px
+                    height: auto
+        .lawyer-left-content
+            display: flex
+            justify-content: left
+            align-items: center
+            order: 2
+            @include mobile
+                padding: 40px 0
+                order: 1
+            .lawyer-left-content-wrapper
+                max-width: 508px
+                .lawyer-left-name
+                    @include font-serif()
+                    font-size: 34px
+                    font-weight: 700
+                    color: #9DC3E6
+                    text-transform: uppercase
+                    margin-bottom: 20px
+                    @include mobile
+                        font-size: 24px
+                .lawyer-left-carreer
+                    font-size: 20px
+                    color: #333F50
+                    margin-bottom: 20px
+                    @include mobile
+                        font-size: 16px
+                .lawyer-left-about
+                    font-size: 16px
+                    line-height: 1.4
+                    color: #333F50
+                    @include mobile
+                        font-size: 14px
+    .lawyer-left-footer
+        background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url('../assets/lawyer-footer-bg.jpg')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        height: 50px
+
+.lawyer-right
+    .container
+        padding: 0 20px
+    .lawyer-right-grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        min-height: 450px
+        @include mobile
+            grid-template-columns: 1fr
+        .lawyer-right-image
+            display: flex
+            justify-content: center
+            align-items: flex-end
+            @include mobile
+                img
+                    max-width: 300px
+                    height: auto
+        .lawyer-right-content
+            display: flex
+            justify-content: left
+            align-items: center
+            @include mobile
+                padding: 40px 0
+            .lawyer-right-content-wrapper
+                max-width: 508px
+                .lawyer-right-name
+                    @include font-serif()
+                    font-size: 34px
+                    font-weight: 700
+                    color: #9DC3E6
+                    text-transform: uppercase
+                    margin-bottom: 20px
+                    @include mobile
+                        font-size: 24px
+                .lawyer-right-carreer
+                    font-size: 20px
+                    color: #333F50
+                    margin-bottom: 20px
+                    @include mobile
+                        font-size: 16px
+                .lawyer-right-about
+                    font-size: 16px
+                    line-height: 1.4
+                    color: #333F50
+                    @include mobile
+                        font-size: 14px
+    .lawyer-right-footer
+        background: linear-gradient(to right, rgba(33, 45, 62, 0.8), rgba(33, 45, 62, 0.8)), url('../assets/lawyer-footer-bg.jpg')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        height: 50px
+
+.lawyer-title-highlight
+    color: #333F50
+
+.lawyers-divider
+    height: 60px
+
+
+
 
 
                 
