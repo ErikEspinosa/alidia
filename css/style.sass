@@ -51,7 +51,9 @@ a
     height: 60px
     background: rgba(0, 0, 0, 0.25)
     @include mobile
+        position: fixed
         background-color: #333F50
+        z-index: 9999
     .container
         display: flex
         justify-content: right
@@ -164,7 +166,7 @@ a
             grid-template-columns: 1fr
         .about-image
             position: relative
-            background: url('../assets/about-image.jpg')
+            background: url('../assets/about-image.png')
             background-position: left center
             background-repeat: no-repeat
             background-size: auto 100%
@@ -172,23 +174,9 @@ a
                 height: 250px
                 background-position: center
                 background-size: cover
-            .about-triangle
-                position: absolute
-                top: 0
-                left: 333px
-                width: 0px
-                height: 0px
-                border-style: solid
-                border-width: 0 0 409px 200px
-                border-color: transparent transparent #D9D9D9 transparent
-                transform: rotate(0deg)
-                @include mobile
-                    top: 0
-                    left: auto
-                    right: 0
-                    border-width: 0 0 250px 150px
         .about-content
             padding: 100px 0
+            padding-left: 10px
             @include mobile
                 padding: 50px 20px
             p
@@ -350,13 +338,20 @@ a
     .why-choose-grid
         display: grid
         grid-template-columns: repeat(2, 1fr)
-        gap: 20px
+        gap: 100px
         @include mobile
             grid-template-columns: 1fr
+            gap: 20px
         .why-choose-item
-            max-width: 325px
-            @include mobile
-                max-width: 100%
+            display: flex
+            &.why-choose-item-left
+                justify-content: right
+            &.why-choose-item-right
+                justify-content: left
+            .why-choose-content
+                max-width: 325px
+                @include mobile
+                    max-width: 100%
             .why-choose-image
                 margin-bottom: 20px
             .why-choose-title
@@ -456,6 +451,8 @@ a
                             max-width: 330px
                             @include mobile
                                 font-size: 14px
+                            a
+                                color: #FFFFFF
 
 .lawyer-left
     .container
@@ -476,6 +473,8 @@ a
                 img
                     max-width: 300px
                     height: auto
+                    @include mobile
+                        width: 100%
         .lawyer-left-content
             display: flex
             justify-content: left
@@ -497,6 +496,7 @@ a
                         font-size: 24px
                 .lawyer-left-carreer
                     font-size: 20px
+                    font-weight: bold
                     color: #333F50
                     margin-bottom: 20px
                     @include mobile
@@ -531,6 +531,8 @@ a
                 img
                     max-width: 300px
                     height: auto
+                    @include mobile
+                        width: 100%
         .lawyer-right-content
             display: flex
             justify-content: left
@@ -550,6 +552,7 @@ a
                         font-size: 24px
                 .lawyer-right-carreer
                     font-size: 20px
+                    font-weight: bold
                     color: #333F50
                     margin-bottom: 20px
                     @include mobile
